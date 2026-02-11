@@ -1,0 +1,31 @@
+ID,Tarea,Requisito,Epica,Sprint,StoryPoints,Pruebas
+T1,Diseñar modelo de datos crudos,RF-1,Ingesta y validación,Sprint 1,3,Unitarias modelo
+T2,Implementar lector CSV,RF-1,Ingesta y validación,Sprint 1,5,Unitarias lectura
+T3,Persistencia en BD cruda,RF-1,Ingesta y validación,Sprint 1,5,Integración BD
+T4,Validación método GET,RF-2,Ingesta y validación,Sprint 1,2,Unitarias validación
+T5,Validación status 200/206,RF-3,Ingesta y validación,Sprint 1,2,Unitarias validación
+T6,Detección bots,RF-4,Ingesta y validación,Sprint 1,3,Unitarias detección
+T7,Validación extensión .mp3,RF-5,Ingesta y validación,Sprint 1,2,Unitarias validación
+T8,Configurar CI/CD,DevOps,DevOps,Sprint 1,5,Pipeline automático
+T9,Dockerización inicial,DevOps,DevOps,Sprint 1,8,Build automático
+T10,Modelo entidad Observación,RF-6,Observaciones,Sprint 2,3,Unitarias entidad
+T11,Generar métricas error,RF-6,Observaciones,Sprint 2,5,Unitarias lógica
+T12,Persistencia observaciones,RF-6,Observaciones,Sprint 2,2,Integración BD
+T13,Acumulación bytes por usuario,RF-7,Observaciones,Sprint 2,8,Unitarias acumulación
+T14,Lógica umbral 206,RF-7,Observaciones,Sprint 2,3,Unitarias umbral
+T15,Lógica umbral 200,RF-7,Observaciones,Sprint 2,3,Unitarias umbral
+T16,Generar observación Download,RF-7,Observaciones,Sprint 2,5,Integración descarga
+T17,Asignar geolocalización aleatoria,RF-7,Observaciones,Sprint 2,2,Unitarias geo
+T18,Cálculo métricas agregadas,RF-8,Análisis,Sprint 2,5,Unitarias estadísticas
+T19,Implementar top-K podcasts,RF-9,Análisis,Sprint 2,5,Unitarias top-K
+T20,Diseñar especificación OpenAPI,RFN-1,API,Sprint 3,5,Validación Swagger
+T21,CRUD Podcast,RFN-1,API,Sprint 3,5,Tests CRUD
+T22,CRUD Episodio,RFN-1,API,Sprint 3,5,Tests CRUD
+T23,CRUD Métrica,RFN-1,API,Sprint 3,5,Tests CRUD
+T24,CRUD Observación,RFN-1,API,Sprint 3,5,Tests CRUD
+T25,Configurar autenticación API,RFN-2,API,Sprint 3,5,Tests seguridad
+T26,Implementar endpoint top-K,RF-10,Visualización,Sprint 3,3,Integración API
+T27,Implementar gráfico columnas,RF-10,Visualización,Sprint 3,8,Pruebas UI
+T28,Implementar recomendación usuario,RF-11,Recomendación,Sprint 3,8,Unitarias recomendación
+T29,Automatizar despliegue,DevOps,DevOps,Sprint 3,8,Deploy automático
+T30,Métricas calidad código,DevOps,DevOps,Sprint 3,3,Reporte Sonar
