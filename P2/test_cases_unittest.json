@@ -1,0 +1,137 @@
+[
+  {
+    "TC_ID": "TC-001",
+    "Requisito": "RF-2",
+    "Titulo": "Rechaza método None",
+    "Configuracion_Entrada": "method=None",
+    "Resultado_Esperado": "Debe cumplirse lo validado en AppTest.test_is_valid_method (assertTrue/False sobre is_valid_method).",
+    "Unittest_Test": "AppTest.test_is_valid_method",
+    "Unittest_Asserts": "self.assertFalse(is_valid_method(None)); self.assertFalse(is_valid_method('')); self.assertTrue(is_valid_method('get'/'GET')); self.assertFalse(is_valid_method('Other'))"
+  },
+  {
+    "TC_ID": "TC-002",
+    "Requisito": "RF-2",
+    "Titulo": "Acepta método GET (case-insensitive)",
+    "Configuracion_Entrada": "method='get' y method='GET'",
+    "Resultado_Esperado": "Debe cumplirse lo validado en AppTest.test_is_valid_method (assertTrue/False sobre is_valid_method).",
+    "Unittest_Test": "AppTest.test_is_valid_method",
+    "Unittest_Asserts": "self.assertFalse(is_valid_method(None)); self.assertFalse(is_valid_method('')); self.assertTrue(is_valid_method('get'/'GET')); self.assertFalse(is_valid_method('Other'))"
+  },
+  {
+    "TC_ID": "TC-003",
+    "Requisito": "RF-2",
+    "Titulo": "Rechaza método distinto",
+    "Configuracion_Entrada": "method='POST'",
+    "Resultado_Esperado": "Debe cumplirse lo validado en AppTest.test_is_valid_method (assertTrue/False sobre is_valid_method).",
+    "Unittest_Test": "AppTest.test_is_valid_method",
+    "Unittest_Asserts": "self.assertFalse(is_valid_method(None)); self.assertFalse(is_valid_method('')); self.assertTrue(is_valid_method('get'/'GET')); self.assertFalse(is_valid_method('Other'))"
+  },
+  {
+    "TC_ID": "TC-004",
+    "Requisito": "RF-3",
+    "Titulo": "Rechaza status inválido/None",
+    "Configuracion_Entrada": "status=None o '' o '303'",
+    "Resultado_Esperado": "Debe cumplirse lo validado en AppTest.test_is_valid_status (solo '200'/'206' True).",
+    "Unittest_Test": "AppTest.test_is_valid_status",
+    "Unittest_Asserts": "self.assertFalse(is_valid_status(None/''/'303')); self.assertTrue(is_valid_status('200'/'206'))"
+  },
+  {
+    "TC_ID": "TC-005",
+    "Requisito": "RF-3",
+    "Titulo": "Acepta status 200/206",
+    "Configuracion_Entrada": "status='200' y status='206'",
+    "Resultado_Esperado": "Debe cumplirse lo validado en AppTest.test_is_valid_status (solo '200'/'206' True).",
+    "Unittest_Test": "AppTest.test_is_valid_status",
+    "Unittest_Asserts": "self.assertFalse(is_valid_status(None/''/'303')); self.assertTrue(is_valid_status('200'/'206'))"
+  },
+  {
+    "TC_ID": "TC-006",
+    "Requisito": "RF-5",
+    "Titulo": "Acepta .mp3 en mayúsculas/minúsculas",
+    "Configuracion_Entrada": "uri_episode termina en .mp3 o .MP3",
+    "Resultado_Esperado": "Debe cumplirse lo validado en AppTest.test_is_valid_resource (solo .mp3 True).",
+    "Unittest_Test": "AppTest.test_is_valid_resource",
+    "Unittest_Asserts": "self.assertFalse(is_valid_resource(None/''/'file.mp4')); self.assertTrue(is_valid_resource('file.mp3'/'file.MP3'))"
+  },
+  {
+    "TC_ID": "TC-007",
+    "Requisito": "RF-5",
+    "Titulo": "Rechaza recurso no mp3",
+    "Configuracion_Entrada": "uri_episode termina en .mp4",
+    "Resultado_Esperado": "Debe cumplirse lo validado en AppTest.test_is_valid_resource (solo .mp3 True).",
+    "Unittest_Test": "AppTest.test_is_valid_resource",
+    "Unittest_Asserts": "self.assertFalse(is_valid_resource(None/''/'file.mp4')); self.assertTrue(is_valid_resource('file.mp3'/'file.MP3'))"
+  },
+  {
+    "TC_ID": "TC-008",
+    "Requisito": "RF-4",
+    "Titulo": "Detecta bot por palabra clave",
+    "Configuracion_Entrada": "user_agent contiene 'Bot'/'Spider'/'Crawler'/'Heritrix' (case-insensitive)",
+    "Resultado_Esperado": "Debe cumplirse lo validado en AppTest.test_is_valid_user_agent (bots False).",
+    "Unittest_Test": "AppTest.test_is_valid_user_agent",
+    "Unittest_Asserts": "self.assertFalse(is_valid_user_agent(None/''/'Bot'/'Spider'/'Crawler'/'Heritrix')); self.assertTrue(is_valid_user_agent('Mozilla Firefox'))"
+  },
+  {
+    "TC_ID": "TC-009",
+    "Requisito": "RF-4",
+    "Titulo": "Acepta user_agent normal",
+    "Configuracion_Entrada": "user_agent='Mozilla Firefox'",
+    "Resultado_Esperado": "Debe cumplirse lo validado en AppTest.test_is_valid_user_agent (bots False).",
+    "Unittest_Test": "AppTest.test_is_valid_user_agent",
+    "Unittest_Asserts": "self.assertFalse(is_valid_user_agent(None/''/'Bot'/'Spider'/'Crawler'/'Heritrix')); self.assertTrue(is_valid_user_agent('Mozilla Firefox'))"
+  },
+  {
+    "TC_ID": "TC-010",
+    "Requisito": "RF-1",
+    "Titulo": "Carga dataset completo",
+    "Configuracion_Entrada": "dataset=data.csv accesible por load_dataset()",
+    "Resultado_Esperado": "len(load_dataset()) debe ser 10000 (AppTest.test_load_dataset).",
+    "Unittest_Test": "AppTest.test_load_dataset",
+    "Unittest_Asserts": "result=load_dataset(); self.assertTrue(len(result)==10000)"
+  },
+  {
+    "TC_ID": "TC-011",
+    "Requisito": "RF-6/RF-7",
+    "Titulo": "Analiza dataset y genera observaciones",
+    "Configuracion_Entrada": "data_entries=load_dataset(); observations=analyze_dataset(data_entries)",
+    "Resultado_Esperado": "len(analyze_dataset(load_dataset())) debe ser 3527 (AppTest.test_analyze_dataset).",
+    "Unittest_Test": "AppTest.test_analyze_dataset",
+    "Unittest_Asserts": "observations=analyze_dataset(load_dataset()); self.assertTrue(len(observations)==3527)"
+  },
+  {
+    "TC_ID": "TC-012",
+    "Requisito": "RF-8",
+    "Titulo": "Genera estadísticas correctas",
+    "Configuracion_Entrada": "stats=generate_stats(analyze_dataset(load_dataset()))",
+    "Resultado_Esperado": "generate_stats(...) debe devolver exactamente: Download 200=43, Download 206=2603, Bad status=48, Bad method=830, Bad format resource=0, Bot detected=3 (AppTest.test_generate_stats).",
+    "Unittest_Test": "AppTest.test_generate_stats",
+    "Unittest_Asserts": "stats=generate_stats(analyze_dataset(load_dataset())); asserts: Download 200=43, Download 206=2603, Bad status=48, Bad method=830, Bad format resource=0, Bot detected=3"
+  },
+  {
+    "TC_ID": "TC-013",
+    "Requisito": "RF-9",
+    "Titulo": "Top K con k=0",
+    "Configuracion_Entrada": "k=0; top_k=list_top_k_programs(list_top_programs(observations),k)",
+    "Resultado_Esperado": "Para k=0, top_k vacío; para k=3, len=3 y conteos [506,247,201] (AppTest.test_list_top_k_programs).",
+    "Unittest_Test": "AppTest.test_list_top_k_programs",
+    "Unittest_Asserts": "k=0 => len(top_k)=0; k=3 => len(top_k)=3; top_k counts [506,247,201]"
+  },
+  {
+    "TC_ID": "TC-014",
+    "Requisito": "RF-9",
+    "Titulo": "Top K con k=3",
+    "Configuracion_Entrada": "k=3",
+    "Resultado_Esperado": "Para k=0, top_k vacío; para k=3, len=3 y conteos [506,247,201] (AppTest.test_list_top_k_programs).",
+    "Unittest_Test": "AppTest.test_list_top_k_programs",
+    "Unittest_Asserts": "k=0 => len(top_k)=0; k=3 => len(top_k)=3; top_k counts [506,247,201]"
+  },
+  {
+    "TC_ID": "TC-015",
+    "Requisito": "RF-11",
+    "Titulo": "Recomendación devuelve 5 episodios",
+    "Configuracion_Entrada": "user='df273cf4-d335-4b7f-b979-17212e8b84d3'",
+    "Resultado_Esperado": "len(recommendations) debe ser 5 (AppTest.test_recommend).",
+    "Unittest_Test": "AppTest.test_recommend",
+    "Unittest_Asserts": "recommend(..., user='df273cf4-d335-4b7f-b979-17212e8b84d3'); self.assertTrue(len(recommendations)==5)"
+  }
+]
