@@ -1,0 +1,7 @@
+pyproject.toml
+app/main.py
+ticket_management_api.egg-info/PKG-INFO
+ticket_management_api.egg-info/SOURCES.txt
+ticket_management_api.egg-info/dependency_links.txt
+ticket_management_api.egg-info/requires.txt
+ticket_management_api.egg-info/top_level.txt
